@@ -1,0 +1,158 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.site {
+  display: grid;
+  place-content: center;
+  height: 100vh;
+}
+
+.hambergur {
+  position: relative;
+  height: 50px;
+  width: 60px;
+  margin: 0 0 5em;
+}
+
+input {
+  width: 60px;
+  height: 50px;
+  padding: 2em;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 1;
+  position: relative;
+}
+.trigger {
+  all:unset;
+}
+
+.trigger span {
+  display: block;
+  position: absolute;
+  height: 6px;
+  width: 50%;
+  background-color: #30336b;
+  border-radius: 3px;
+  opacity: 1;
+  left: 0;
+  transition: all .3s ease-in-out;
+  -webkit-transition: all .3s ease-in-out;
+}
+.trigger span:nth-child(even) {
+  left: 50%;
+  border-radius: 0 3px 3px 0;  
+}
+.trigger span:nth-child(odd) {
+  left: 0;
+  border-radius: 3px 0 0 3px;  
+}
+.trigger :where(span:nth-child(1),span:nth-child(2)) {
+  top: 0;
+}
+.trigger :where(span:nth-child(3),span:nth-child(4)) {
+  top: 50%;
+  margin-top: -3px;
+}
+.trigger :where(span:nth-child(5),span:nth-child(6)) {
+  top: 44px;
+}
+
+/* start animating */
+.one input:checked ~ .trigger :where(span:nth-child(1),span:nth-child(6)) {
+  transform: rotate(45deg);
+}
+
+.one input:checked ~ .trigger :where(span:nth-child(2),span:nth-child(5)) {
+  transform: rotate(-45deg);
+}
+.one input:checked ~ .trigger span:nth-child(1) {
+  left: 6px;
+  top: 13px;
+}
+.one input:checked ~ .trigger span:nth-child(2) {
+  left: calc(50% - 6px);
+  top: 13px;
+}
+.one input:checked ~ .trigger span:nth-child(3) {
+  left: -50%;
+  opacity: 0;
+}
+.one input:checked ~ .trigger span:nth-child(4) {
+  left: 100%;
+  opacity: 0;
+}
+.one input:checked ~ .trigger span:nth-child(5) {
+  left: 6px;
+  top: 31px;
+}
+.one input:checked ~ .trigger span:nth-child(6) {
+  left: calc(50% - 6px);
+  top: 31px;
+}
+
+/* Hambergur Two */
+.two .trigger {
+  position: absolute;
+  top: 0;
+  transform: translateY(25px);
+}
+.two .trigger, .two .trigger::before, .two .trigger::after {
+  width: 60px;
+  height: 5px;
+  background-color: #686de0;
+  display: block;  
+}
+
+.two .trigger::before, .two .trigger::after {
+  content: '';
+  position: absolute;
+  left: 0;
+}
+
+.two .trigger::before {
+  bottom: 25px;
+  transition: bottom .3s .3s cubic-bezier(0.215, 0.610, 0.355, 1), transform .3s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+.two .trigger::after {
+  top: 25px;
+  transition: top .3s .3s cubic-bezier(0.215, 0.610, 0.355, 1), transform .3s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+/* Animate the Hambergur Two */
+.two input:checked ~ .trigger {
+  background-color: transparent;
+}
+
+.two input:checked ~ .trigger::before {
+  transform: rotate(135deg);
+  bottom: 0;
+  transition: bottom .3s cubic-bezier(0.215, 0.610, 0.355, 1), transform .3s .3s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+.two input:checked ~ .trigger::after {
+  transform: rotate(45deg);
+  top: 0;
+  transition: top .3s cubic-bezier(0.215, 0.610, 0.355, 1), transform .3s .3s cubic-bezier(0.215, 0.610, 0.355, 1);
+
+}
+
+/* Background on hover */
+
+.hambergur::before {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  left: 5px;
+  transform: scale(2);
+  border-radius: 50%;
+}
+.hambergur:hover::before {
+  background-color: #c2c5ff;
+  transform: scale(2);
+}
+
