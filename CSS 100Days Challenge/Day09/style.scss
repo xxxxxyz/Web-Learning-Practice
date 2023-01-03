@@ -1,0 +1,264 @@
+// delete the following line if no text is used
+// edit the line if you wanna use other fonts
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,500,300);
+
+$rain-color: #7FC1F9;
+// use only the available space inside the 400x400 frame
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+	box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+	overflow: hidden;
+  background: #1A2238;
+  color: #333;
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+  position: relative;
+	height:400px;
+	width:400px;
+}
+.data {
+	height:90px;
+	width:100%;
+	background:white;
+	position:absolute;
+	bottom:0;
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+	padding:0 30px;
+	box-sizing:border-box;
+}
+.moon {
+	height:65px;
+	width:65px;
+	border-radius:50%;
+	background:#F6EDBD;
+	box-shadow: 0 0 10px 0 #F6EDBD;
+	position:relative;
+	overflow:hidden;
+	border:2px solid #F6EDBD;
+	top:60px;
+	left:70px;
+	animation: rise 1.5s ease;
+}
+.crcl-1 {
+		height:11px;
+		width: 11px;
+		border-radius:50%;
+		background:#ECE1A8;
+		position:absolute;
+		top: 10px;
+		left:30px;
+	}
+.crcl-2 {
+	@extend .crcl-1;
+	top: 15px;
+	left:-2px;
+}
+.crcl-3 {
+	@extend .crcl-1;
+	top: 20px;
+	left: 49px;
+	height:6px;
+	width:6px;
+}
+.crcl-4 {
+	@extend .crcl-3;
+	top: 33px;
+	left: 15px;
+}
+.crcl-5 {
+	@extend .crcl-3;
+	top:44px;
+	left:30px;
+}
+.crcl-6 {
+	@extend .crcl-3;
+	top:34px;
+	left: 45px;
+}
+.crcl-7 {
+	@extend .crcl-3;
+	top:14px;
+	left: 15px;
+	height:5px;
+	width:5px;
+}
+.crcl-8 {
+	@extend .crcl-7;
+	top:33px;
+	left: 33px;
+}
+.crcl-9 {
+	@extend .crcl-2;
+	top:47px;
+	left: 50px;
+}
+.crcl-10 {
+	@extend .crcl-7;
+	top:55px;
+	left:20px;
+}
+.hills {
+	position:absolute;
+	width:400px;
+	bottom:0;
+	height:200px;
+}
+.hill {
+	width:330px;
+	height:330px;
+	background:#303C5D;
+	border-radius:50%;
+	position:absolute;
+}
+.hill-1 {
+	right:-80px;
+	background:#26314F;
+}
+.hill-2 {
+	top:10px;
+	left:-80px;
+	background:#26314F;
+}
+.hill-3 {
+	top:50px;
+	left:-120px;
+}
+.hill-4 {
+	top:50px;
+	right: -200px;
+}
+.hill-5 {
+	top:30px;
+	left:50px;
+}
+.rains {
+	position:absolute;
+	height:310px;
+	width:400px;
+	top:0;
+	// display:flex;
+	// justify-content:space-between;
+	// align-items:flex-end;
+}
+.rain {
+	position:absolute;
+	bottom:0;
+	width: 7px;
+	height: 7px;
+	border-radius:50%;
+	background:$rain-color;
+	transform-origin:50% 100%;
+}
+.rain::before {
+	content:'';
+	display:block;
+	height:6px;
+	width:6px;
+	background:$rain-color;
+	position:absolute;
+	top:-2px;
+	left:1px;
+	border-radius:50%; 
+}
+.rain::after {
+	content:'';
+	display:block;
+	height:10px;
+	width:4px;
+	background:$rain-color;
+	top:-4px;
+	position:absolute;
+	left:2px;
+	border-radius:50%;
+}
+@for $i from 1 through 10 {
+	.rain-lg-#{$i} {
+		left: (random(400)) + px;
+		animation: rain-drop (.8 + random(2) * .1) + s linear ( random(50) / 25) + s infinite;
+		animation-fill-mode: both;
+	}
+}
+@for $i from 1 through 10 {
+	.rain-md-#{$i} {
+		@extend .rain-lg-#{$i};
+		left: (random(400)) + px;
+		height:6px;
+		width:6px;
+		opacity:.6;
+	animation: rain-drop (.9 + random(2) * .1) + s linear ( random(50) / 25) + s infinite;
+	animation-fill-mode: both;
+	}
+	.rain.rain-md-#{$i}::before{
+		height:8px;
+		width:4px;
+	}
+	.rain.rain-md-#{$i}::after {
+		width:2px;
+	}
+}
+@for $i from 1 through 10 {
+	.rain-sm-#{$i} {
+		@extend .rain-lg-#{$i};
+		left: (random (400)) + px;
+		height:4px;
+		width:4px;
+		opacity:.3;
+		animation: rain-drop (1 + random(2) / 10) + s linear (random(50) / 25) + s infinite;
+	animation-fill-mode: both;
+	}
+.rain.rain-sm-#{$i}::before { 
+	width:3px;
+	height:3px;
+}
+.rain.rain-sm-#{$i}::after {
+	width:2px;
+	height:6px;
+}
+}
+@keyframes rain-drop {
+	0% {
+		transform: translate3D(30px,-320px,0) rotate(17deg) scaleX(1) scaleY(1);
+	}
+	80% {
+		transform: translate3D(0,0,0) rotate(17deg) scaleX(1) scaleY(1);
+	}
+	100% {
+		transform: translate3D(0,0,0) rotate(0) scaleX(2.5) scaleY(0);
+	}
+}
+.data{
+	font-weight:300;
+	font-size:15px;
+	line-height:1.2;
+}
+.temperature {
+	font-size: 45px;
+}
+.info {
+	font-size: 15px;
+}
+.preview {
+	text-align:right;
+	.pev > span {
+		font-weight:500;
+		width: 70px;
+		display:inline-block;
+	}
+}
+
+@keyframes rise {
+	0%{transform: translateY(160px)}
+}
