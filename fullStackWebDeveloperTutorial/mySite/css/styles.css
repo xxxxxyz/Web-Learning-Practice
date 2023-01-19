@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400&family=Montserrat:ital,wght@0,300;1,300&family=Sacramento&display=swap');
+
+body {
+    margin: 0;
+    color: #40514e;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+    margin: 50px, auto;
+    font-family: 'Sacramento', cursive;
+    font-size: 5.62rem;
+    color: #66bfbf;
+    line-height: 2;
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    color: #66bfbf;
+    font-weight: normal;
+    padding-bottom: 10px;
+}
+
+h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: #11999e;
+}
+
+a {
+    color: #11999e;
+}
+
+.top-container {
+    position: relative;
+    padding-top: 100px;
+    background-color: aliceblue;
+}
+
+/* middle section styling */
+
+.middle-container {
+    margin: 100px 0;
+}
+.pro {
+    text-decoration: underline;
+}
+.intro {
+    width: 30%;
+}
+
+
+.top-cloud {
+    position: absolute;
+    right: 300px;
+    top: 50px;
+}
+
+.skills {
+    align-items: center;
+}
+.skill-row {
+    text-align: left;
+    width: 50%;
+    margin: 100px auto;
+    line-height: 2;
+}
+.bottom-cloud {
+    position: absolute;
+    left: 300px;
+    top: 300px;
+}
+
+.contact-me {
+    padding: 100px auto;
+    position: relative;
+    width: 100%;
+}
+.btn {
+    background-color: #11999e;
+    color: white;
+    padding: 12px 20px;
+    margin: 60px auto;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+}
+.btn:hover {
+    color: #11999e;
+    border: 1px solid #11999e;
+}
+
+/* bottom section styling */
+
+.bottom-container {
+    position: relative;
+}
