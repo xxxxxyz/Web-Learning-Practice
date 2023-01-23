@@ -24,32 +24,61 @@ h2 {
 }
 
 h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 2rem 0 0;
     font-family: 'Montserrat', sans-serif;
     color: #11999e;
 }
 
 a {
     color: #11999e;
+    text-decoration: none;
+    margin: 12px 20px;
+}
+a:hover {
+    color: #f0f8ff;
+    cursor: pointer;
 }
 
 .top-container {
     position: relative;
     padding-top: 100px;
-    background-color: aliceblue;
+    background-color: #f0f8ff;
 }
 
-/* middle section styling */
+.hero-img {
+    margin: 0 auto 100px;
+}
 
+.skill-img {
+    position: relative;
+    width: 25%;
+    float: left;
+    margin-right: 30px;
+}
+
+
+/* middle section styling */
 .middle-container {
-    margin: 100px 0;
+
 }
 .pro {
     text-decoration: underline;
 }
+
 .intro {
-    width: 30%;
+    margin: 0 auto 60px;
+    font-weight: 600;
+    line-height: 24px;
 }
 
+hr {
+    border: dotted #eaf6f6 6px;
+    border-bottom: none;
+    width: 4%;
+    margin-bottom: 60px;
+}
 
 .top-cloud {
     position: absolute;
@@ -58,14 +87,17 @@ a {
 }
 
 .skills {
-    align-items: center;
+    display: flex;
+    flex-direction: column;
 }
+
 .skill-row {
     text-align: left;
     width: 50%;
-    margin: 100px auto;
+    margin: 60px auto;
     line-height: 2;
 }
+
 .bottom-cloud {
     position: absolute;
     left: 300px;
@@ -73,15 +105,21 @@ a {
 }
 
 .contact-me {
-    padding: 100px auto;
-    position: relative;
+    display: flex;
+    flex-direction: column;
     width: 100%;
 }
+
+p .contactMe {
+    margin-bottom: 40px;
+    
+}
+
 .btn {
     background-color: #11999e;
     color: white;
     padding: 12px 20px;
-    margin: 60px auto;
+    margin: 40px auto;
     border-radius: 8px;
     font-size: 16px;
     font-weight: 600;
@@ -90,10 +128,11 @@ a {
 .btn:hover {
     color: #11999e;
     border: 1px solid #11999e;
+    background: white;
 }
 
 /* bottom section styling */
-
 .bottom-container {
-    position: relative;
+    background: #66bfbf;
+    padding: 50px 0 20px;   
 }
