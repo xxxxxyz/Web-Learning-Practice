@@ -1,0 +1,113 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:600,400);
+
+.frame {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    top: 50%;
+    left: 50%;
+    margin-top: -200px;
+    margin-left: -200px;
+    overflow: hidden;
+    box-shadow: 1px,2px,10px,0,rgba(0, 0, 0, 0.3);
+    border-radius: 2px;
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+    font-family: 'Open Sans', Helvetica, sans-serif;
+    color: #497081;
+}
+
+.list {
+    position: absolute;
+    height: 280px;
+    width: 240px;
+    background: white;
+    top:60px;
+    left: 80px;
+    box-shadow: 4px,8px,12px,0,rgba(0,0, 0, 0.1);
+    border-radius: 3px;
+
+    .head {
+        padding: 20px 0;
+        margin: 0 30px;
+        border-bottom: 1px solid #d4dce0;
+        text-align: center;
+    }
+
+    .title {
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 30px;
+    }
+
+    .subtitle {
+        font-size: 12px;
+        font-weight: 300;
+    }
+
+    ul {
+        list-style: none;
+        padding: 4px 0;
+        margin: 0 10px;
+
+        li {
+            position: relative;
+            display: block;
+            height: 14px;
+            margin: 24px;
+        }
+    
+        .text {
+            float: left;
+            font-size: 13px;
+            line-height: 14px;
+            cursor: pointer;
+            transition: all .3s ease-in-out;
+        }
+    
+        .button {
+            position: relative;
+            z-index: 2;
+            box-sizing: border-box;
+            float: right;
+            border-radius: 50%;
+            width: 14px;
+            height: 14px;
+            border: 1px solid #497081;
+            cursor: pointer;
+            transition: all .4s ease-out .5s;
+        }
+    
+        .checkmark {
+            fill: none;
+            position: absolute;
+            top: 2px;
+            right: 0;
+            stroke: #c8d4d9;
+            stroke-width: 1.5;
+            stroke-dasharray: 30 30;
+            stroke-dashoffset: 30;
+            transition: all .5ss ease-out;
+        }
+        
+        input {
+            display: none;
+
+            &:checked ~ .text{
+                color: #c8d4d9;
+            }
+
+            &:checked ~ .button {
+                transition: all .4s ease-in;
+                transform: scale(1.2);
+                opacity: 0;
+            }
+
+            &:checked ~ .checkmark {
+                transform: all .4s ease-out .4s;
+                stroke-dashoffset: 0;
+            }
+        }
+    }
+}
+
