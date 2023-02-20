@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,200;0,300;0,400;1,200&family=Barlow:wght@300;400&family=Bellefair&display=swap');
+
+body {
+    display: block;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    background-image: url(/starter-code/assets/home/background-home-desktop.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+
+    .header {
+        height: 6rem;
+        width: 100%;
+        position: relative;
+        top: 40px;
+        display: flex;
+        left: 55px;
+        align-items: center;
+
+        .logo {
+            width: 48px;
+            align-items: center;
+        }
+        
+        .navBar {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 57%;
+            height: 6rem;
+            display: flex;
+            align-items: center;
+            padding-left: 15%;
+            background: rgba(255,255,255, 0.04);
+            backdrop-filter: blur(40.7742px);
+            font-family: 'Barlow Condensed';
+            font-size: 16px;
+            
+            a {
+                text-decoration: none;
+                color: white;
+                align-items: center;
+                margin-right: 3rem;
+                font-weight: 300;
+                
+                span.nav-num {
+                    font-weight: 700;
+                    margin-right: 11px;
+                }
+            }
+        }
+    }
+
+    .hero {
+        
+        .content {
+            position: absolute;
+            display: block;
+            top: 387px;
+            left: 165px; 
+            width: 450px; 
+            color:#D0D6F9;
+        
+        .small-title {
+            font-size: 28px;
+            line-height: 1.2;
+            font-family: 'Barlow Condensed';
+            letter-spacing: 4.725px;
+            font-weight: 300;
+            margin: 0;
+        }
+
+        .large-title {
+            font-size: 150px;
+            line-height: 1.14;
+            font-family:'Bellefair', Times, serif;
+            color: white;
+            font-weight: 300;
+            margin: 24px 0;
+        }
+
+        .detail {
+            margin: 0;
+            left: .11%;
+            right: 1.22%;
+            font-size: 18px;
+            line-height: 1.78;
+            color: #D0D6F9;
+            font-family: 'Barlow';
+            font-weight: 300;
+        }
+        }
+        .expBtn {
+            position: absolute;
+            top: 495px;
+            right: 165px;
+            float: right;
+            color: white;
+
+            button {
+                padding: 118px 64px;
+                border-radius: 50%;
+                font-size: 32px;
+                font-family: 'Bellefair';
+                color: #0b0d17;
+            }
+        }
+    }
+}
