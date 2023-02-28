@@ -1,0 +1,81 @@
+:root {
+	--dark-blue: #1d3557;
+	
+	--bright-red: #e63946;
+	--light-blue: #a8dadc;
+	--yellow: #ffbd00;
+	
+	--shadow: hsla(231, 18%, 35%, 0.1);
+	font-size: 62.5%;
+}
+
+$duration: 40;
+$move: 10;
+$numberOfRhombuses: 16;
+
+.frame {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 40rem;
+	height: 40rem;
+	margin-top: -20rem;
+	margin-left: -20rem;
+	border-radius: 0.2rem;
+	box-shadow: 0.8rem 0.8rem 1.6rem 0 var(--shadow);
+	overflow: hidden;
+	background-color: var(--dark-blue);
+	color: hsl(0%, 0%, 13%);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.rhombuses {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1.2rem;
+}
+
+.rhombus {
+	width: 1rem;
+	height: 1rem;
+	background-color: var(--light-blue);
+	clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+	
+	&:nth-child(2n) {
+		width: 0.8rem;
+		height: 0.8rem;
+		background-color: var(--yellow);
+	}
+	
+	&:nth-child(3n) {
+		width: 0.6rem;
+		height: 0.6rem;
+		background-color: var(--bright-red);
+	}
+	
+	@for $i from 1 to $numberOfRhombuses {
+		$time: $duration / ($move + $numberOfRhombuses - $i);
+		&-#{$i} {
+			animation: move-rhombus ($time * 1200) + ms ease-in-out infinite;
+		}
+	}
+}
+
+@keyframes move-rhombus {
+	0%, 100% {
+		transform: translate3d(2.5rem, 0, 0);
+	}
+	
+	50% {
+		transform: translate3d(-2.5rem, 0, 0);
+	}
+}

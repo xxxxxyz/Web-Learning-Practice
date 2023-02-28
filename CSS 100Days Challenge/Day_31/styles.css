@@ -1,0 +1,111 @@
+:root {
+  --dark-blue: #1d3557;
+  --bright-red: #e63946;
+  --light-blue: #a8dadc;
+  --yellow: #ffbd00;
+  --shadow: hsla(231, 18%, 35%, 0.1);
+  font-size: 62.5%;
+}
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40rem;
+  height: 40rem;
+  margin-top: -20rem;
+  margin-left: -20rem;
+  border-radius: 0.2rem;
+  box-shadow: 0.8rem 0.8rem 1.6rem 0 var(--shadow);
+  overflow: hidden;
+  background-color: var(--dark-blue);
+  color: hsl(0, 0%, 13%);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.rhombuses {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.rhombus {
+  width: 1rem;
+  height: 1rem;
+  background-color: var(--light-blue);
+  -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+          clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+.rhombus:nth-child(2n) {
+  width: 0.8rem;
+  height: 0.8rem;
+  background-color: var(--yellow);
+}
+.rhombus:nth-child(3n) {
+  width: 0.6rem;
+  height: 0.6rem;
+  background-color: var(--bright-red);
+}
+.rhombus-1 {
+  animation: move-rhombus 1920 ms ease-in-out infinite;
+}
+.rhombus-2 {
+  animation: move-rhombus 2000 ms ease-in-out infinite;
+}
+.rhombus-3 {
+  animation: move-rhombus 2086.9565217391 ms ease-in-out infinite;
+}
+.rhombus-4 {
+  animation: move-rhombus 2181.8181818182 ms ease-in-out infinite;
+}
+.rhombus-5 {
+  animation: move-rhombus 2285.7142857143 ms ease-in-out infinite;
+}
+.rhombus-6 {
+  animation: move-rhombus 2400 ms ease-in-out infinite;
+}
+.rhombus-7 {
+  animation: move-rhombus 2526.3157894737 ms ease-in-out infinite;
+}
+.rhombus-8 {
+  animation: move-rhombus 2666.6666666667 ms ease-in-out infinite;
+}
+.rhombus-9 {
+  animation: move-rhombus 2823.5294117647 ms ease-in-out infinite;
+}
+.rhombus-10 {
+  animation: move-rhombus 3000 ms ease-in-out infinite;
+}
+.rhombus-11 {
+  animation: move-rhombus 3200 ms ease-in-out infinite;
+}
+.rhombus-12 {
+  animation: move-rhombus 3428.5714285714 ms ease-in-out infinite;
+}
+.rhombus-13 {
+  animation: move-rhombus 3692.3076923077 ms ease-in-out infinite;
+}
+.rhombus-14 {
+  animation: move-rhombus 4000 ms ease-in-out infinite;
+}
+.rhombus-15 {
+  animation: move-rhombus 4363.6363636364 ms ease-in-out infinite;
+}
+
+@keyframes move-rhombus {
+  0%, 100% {
+    transform: translate3d(2.5rem, 0, 0);
+  }
+  50% {
+    transform: translate3d(-2.5rem, 0, 0);
+  }
+}/*# sourceMappingURL=styles.css.map */
