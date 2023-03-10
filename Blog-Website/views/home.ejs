@@ -3,4 +3,15 @@
 <h1>Hello</h1>
 <p> <%= homeContent %> </p>
 
+
+<% posts.forEach(function(post){ %>
+    <h3> <%= post.title %> </h3>
+    <p>  
+        <%= post.content.substr(0,100) + "..." %> 
+        <a href ="/posts/<%= post.title %>" >Read More</a>
+    </p>
+
+<% }) %>
+
+
 <%- include('partials/footer'); %>
