@@ -1,0 +1,59 @@
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: #0B4B59;
+  color: #333;
+  font-family: "Open Sans", Helvetica, sans-serif;
+}
+
+.wave {
+  animation: wave ease-in-out alternate infinite;
+  transform: scale(1.7) translateX(-50px);
+}
+
+.wave1 {
+  position: absolute;
+  top: 250px;
+  left: 0px;
+  fill: #0D6973;
+  z-index: 1;
+  width: 400px;
+  animation-duration: 7s;
+  animation-delay: 0.3s;
+}
+
+.wave2 {
+  position: absolute;
+  top: 300px;
+  left: 0px;
+  fill: #37A6A6;
+  z-index: 2;
+  animation-duration: 5s;
+  animation-delay: 0.7s;
+}
+
+.wave3 {
+  position: absolute;
+  top: 350px;
+  left: 0px;
+  fill: #7ED9D0;
+  z-index: 3;
+  animation-duration: 4s;
+}
+
+@keyframes wave {
+  from {
+    transform: scale(1.7) translateX(-50px);
+  }
+  to {
+    transform: scale(1.7) translateX(50px);
+  }
+}/*# sourceMappingURL=style.css.map */
