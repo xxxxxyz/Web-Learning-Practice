@@ -1,0 +1,66 @@
+$rows: 3;
+$columns:3;
+$length: 128;
+$space: 4;
+
+.frame {
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 1px 2px 10px 0px rgba(0,0,0,0.2);
+	overflow: hidden;
+  background: #fff;
+  color: #fff;
+}
+
+.pics {
+    padding: 2px;
+
+    .pic {
+        position: absolute;
+        float: left;
+        width: ($length)+ px;
+        height: ($length) + px;
+        margin: ($space / 2) + px;
+        cursor: pointer;
+        background: black;
+        animation: small .5s ease-in-out both;
+        transition: transform .5s ease-in-out, z-index linear .5s;
+
+        &.active {
+            animation: big .5s ease-in-out;
+        }
+
+        &.away img {
+            opacity: 0;
+        }
+    }
+
+    $top: 0%;
+    $left: 0%;
+    $row: 1;
+    $column:1;
+
+    @for $i from 1 through($rows * $columns) {
+
+
+        // update row
+        @if ($row * $columns) < $i {
+            $row: $row + i;
+        }
+
+        //update column
+        $column: $i - (($row - 1) * $columns);
+
+        //set values for top and left origin
+        $top: ($row - 1 ) / ($row - 1) * 100%;
+        $left: ($column -1) / ($columns - 1) * 100%;
+
+        
+    }
+}
