@@ -1,0 +1,15 @@
+body {
+    margin: 0;
+}
+
+header {
+    background:'#03a9f4';
+    text-align: center;
+    padding: 20px;
+}
+
+.logo {
+    color: '#fff';
+    font-family: 'Anton';
+    text-align:'center';
+}
